@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <property name="LOG_HOME" value="${LOG_HOME:-${user.dir}}"/>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>%date{ISO8601} %-5level [%thread] %logger{32} - %message%n</pattern>
+        </layout>
+    </appender>
+
+    <appender name="rollingFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <File>${LOG_HOME}/spring5-in-action.log</File>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_HOME}/spring5-in-action-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>100MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%date{ISO8601} %-5level [%thread] %logger{32} - %message%n</pattern>
+        </encoder>
+    </appender>
+    <!-- 日志输出级别 -->
+    <!--
+    <root level="${app.log.level:-ERROR}">
+        <appender-ref ref="rollingFile"/>
+    </root>
+    -->
+    <root level="${app.log.level:-INFO}">
+        <appender-ref ref="STDOUT"/>
+    </root>
+</configuration>
