@@ -2,7 +2,7 @@
 
 # IntelliJ project files
 .idea
-*.im
+*.iml
 out
 gen
 **/.mvn
