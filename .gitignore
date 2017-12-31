@@ -1,0 +1,23 @@
+# Created by .ignore support plugin (hsz.mobi)
+
+# IntelliJ project files
+.idea
+*.im
+out
+gen
+**/.mvn
+mvnw
+mvnw.cmd
+target
+**/target/
+.idea_modules/
+.DS_Store
+out/
+*.log
+/.settings/
+.cache
+conf/**
+**/.settings/
+**/logs/
+**/.classpath
+**/.project
