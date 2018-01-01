@@ -13,17 +13,24 @@
 
     <name>ProSpring5</name>
     <description>Pro Spring5 Learning</description>
+    <url>http://maven.apache.org</url>
 
     <properties>
         <java.version>1.8</java.version>
         <java.encoding>UTF-8</java.encoding>
         <project.build.sourceEncoding>${java.encoding}</project.build.sourceEncoding>
         <spring.version>5.0.2.RELEASE</spring.version>
+        <lombok-version>1.16.18</lombok-version>
         <junit.version>4.12</junit.version>
         <mockito.version>1.9.5</mockito.version>
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok-version}</version>
+        </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>jcl-over-slf4j</artifactId>
