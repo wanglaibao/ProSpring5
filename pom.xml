@@ -7,8 +7,8 @@
     <artifactId>ProSpring5</artifactId>
     <version>1.0.0-SNAPSHOT</version>
 
-    <name>pro spring5 example</name>
-    <description>spring5 framework learning examples</description>
+    <name>ProSpring5</name>
+    <description>Pro Spring5 Learning</description>
 
     <properties>
         <java.version>1.8</java.version>
