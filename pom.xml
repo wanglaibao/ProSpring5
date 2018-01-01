@@ -6,6 +6,7 @@
     <groupId>com.laibao</groupId>
     <artifactId>ProSpring5</artifactId>
     <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
 
     <name>ProSpring5</name>
     <description>Pro Spring5 Learning</description>
