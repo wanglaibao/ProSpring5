@@ -10,6 +10,7 @@
         <module>chapter1</module>
         <module>chapter2</module>
         <module>chapter3</module>
+        <module>test</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -21,10 +22,11 @@
         <java.version>1.8</java.version>
         <java.encoding>UTF-8</java.encoding>
         <project.build.sourceEncoding>${java.encoding}</project.build.sourceEncoding>
-        <spring.version>5.0.5.RELEASE</spring.version>
+        <spring.version>5.0.7.RELEASE</spring.version>
         <lombok-version>1.16.18</lombok-version>
         <junit.version>4.12</junit.version>
         <mockito.version>1.9.5</mockito.version>
+        <motan.version>1.1.1</motan.version>
     </properties>
 
     <dependencies>
@@ -253,6 +255,64 @@
             <artifactId>eclipse-collections-forkjoin</artifactId>
             <version>9.1.0</version>
         </dependency>
+
+
+        <!-- motan dependency-->
+        <dependency>
+            <groupId>com.weibo</groupId>
+            <artifactId>motan-core</artifactId>
+            <version>${motan.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.weibo</groupId>
+            <artifactId> motan-springsupport</artifactId>
+            <version>${motan.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.weibo</groupId>
+            <artifactId>motan-transport-netty</artifactId>
+            <version>${motan.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.weibo</groupId>
+            <artifactId>motan-transport-netty4</artifactId>
+            <version>${motan.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.weibo</groupId>
+            <artifactId>motan-registry-consul</artifactId>
+            <version>${motan.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.weibo</groupId>
+            <artifactId>motan-registry-zookeeper</artifactId>
+            <version>${motan.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.weibo</groupId>
+            <artifactId>motan-extension</artifactId>
+            <version>${motan.version}</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.apache.curator</groupId>
+            <artifactId>curator-framework</artifactId>
+            <version>4.0.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.curator</groupId>
+            <artifactId>curator-recipes</artifactId>
+            <version>4.0.0</version>
+        </dependency>
+
 
     </dependencies>
 
