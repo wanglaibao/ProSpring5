@@ -11,6 +11,11 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  */
 public class DependencyPullTest {
 
+    /**
+     * This kind of IoC is not only prevalent in JEE-based applications (using EJB 2.1 or prior versions), which
+     * make extensive use of JNDI lookups to obtain dependencies from a registry, but also pivotal to working with
+     * Spring in many environments.
+     */
     @Test
     public void testDependencyPull() {
         ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext();
@@ -19,6 +24,8 @@ public class DependencyPullTest {
 
         MessageRender messageRender = applicationContext.getBean("render", MessageRender.class);
         messageRender.render();
-        applicationContext.close();
+        if (applicationContext != null ) {
+            applicationContext.close();
+        }
     }
 }
