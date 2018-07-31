@@ -1,7 +1,7 @@
 package com.laibao.prospring5.factory;
 
 import com.laibao.prospring5.provider.MessageProvider;
-import com.laibao.prospring5.renderer.MessageRender;
+import com.laibao.prospring5.render.MessageRender;
 
 import java.util.Properties;
 

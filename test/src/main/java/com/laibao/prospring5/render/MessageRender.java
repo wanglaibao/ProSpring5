@@ -1,4 +1,4 @@
-package com.laibao.prospring5.renderer;
+package com.laibao.prospring5.render;
 
 import com.laibao.prospring5.provider.MessageProvider;
 

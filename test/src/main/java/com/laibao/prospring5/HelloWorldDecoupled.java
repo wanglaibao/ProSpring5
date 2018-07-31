@@ -2,8 +2,8 @@ package com.laibao.prospring5;
 
 import com.laibao.prospring5.provider.MessageProvider;
 import com.laibao.prospring5.provider.impl.HelloWorldMessageProvider;
-import com.laibao.prospring5.renderer.MessageRender;
-import com.laibao.prospring5.renderer.impl.StandardOutMessageRenderer;
+import com.laibao.prospring5.render.MessageRender;
+import com.laibao.prospring5.render.impl.StandardOutMessageRenderer;
 
 /**
  * @author laibao wang
