@@ -1,5 +1,6 @@
 package com.laibao.spring5.chapter3.xmlbeanfactory;
 
+import com.laibao.spring5.chapter3.injection.InjectRef;
 import com.laibao.spring5.chapter3.injection.Oracle;
 import com.laibao.spring5.chapter3.render.MessageRender;
 import org.apache.log4j.or.jms.MessageRenderer;
@@ -43,5 +44,15 @@ public class XmlBeanFactoryTest {
         MessageRender messageRender = ctx.getBean("render", MessageRender.class);
         messageRender.render();
         ctx.close();
+    }
+
+    @Test
+    public void testInjectRef() {
+        GenericXmlApplicationContext ctx = new GenericXmlApplicationContext();
+        ctx.load(new String[]{"classpath:META-INF/spring/xml-beanfactory-config.xml","classpath:META-INF/spring/app-context-config.xml"});
+        ctx.refresh();
+
+        InjectRef injectRef = ctx.getBean("injectRef",InjectRef.class);
+        System.out.println(injectRef.toString());
     }
 }
