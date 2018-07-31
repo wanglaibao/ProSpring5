@@ -1,10 +1,13 @@
 package com.laibao.spring5.chapter3.xmlbeanfactory;
 
 import com.laibao.spring5.chapter3.injection.Oracle;
+import com.laibao.spring5.chapter3.render.MessageRender;
+import org.apache.log4j.or.jms.MessageRenderer;
 import org.junit.Test;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
+import org.springframework.context.support.GenericXmlApplicationContext;
 import org.springframework.core.io.ClassPathResource;
 
 /**
@@ -30,5 +33,15 @@ public class XmlBeanFactoryTest {
 
         Oracle oracle1 = beanFactory.getBean("wiseworm",Oracle.class);
         System.out.println(oracle.defineMeaningOfLife());
+    }
+
+    @Test
+    public void testXmlConfigAnotation() {
+        GenericXmlApplicationContext ctx = new GenericXmlApplicationContext();
+        ctx.load("classpath:META-INF/spring/app-context-annotation.xml");
+        ctx.refresh();
+        MessageRender messageRender = ctx.getBean("render", MessageRender.class);
+        messageRender.render();
+        ctx.close();
     }
 }

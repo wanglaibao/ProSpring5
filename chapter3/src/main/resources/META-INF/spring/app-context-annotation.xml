@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                            http://www.springframework.org/schema/beans/spring-beans.xsd
+                            http://www.springframework.org/schema/context
+                            http://www.springframework.org/schema/context/spring-context.xsd">
+    <!--
+            The <context:component-scan> tag tells Spring to scan the code for injectable beans annotated with
+            @Component, @Controller, @Repository, and @Service as well as supporting the @Autowired, @Inject, and
+            @Resource annotations under the package (and all its subpackages) specified.
+
+            In the <context:component-scan> tag, multiple packages can be defined by using either a comma, a semicolon, or a space as the delimiter.
+            Moreover, the tag supports inclusion and exclusion of a component scan for more fine-grained control
+    -->
+
+    <context:component-scan base-package="com.laibao.spring5.chapter3.provider,com.laibao.spring5.chapter3.render"/>
+
+</beans>
