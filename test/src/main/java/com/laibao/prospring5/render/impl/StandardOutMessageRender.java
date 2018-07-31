@@ -8,14 +8,14 @@ import com.laibao.prospring5.render.MessageRender;
  * @date 2018-07-31
  * @version 1.0
  */
-public class StandardOutMessageRenderer implements MessageRender{
+public class StandardOutMessageRender implements MessageRender{
 
     private MessageProvider messageProvider;
 
     @Override
     public void render() {
         if (messageProvider == null) {
-            throw new RuntimeException("You must set the property messageProvider of class:" + StandardOutMessageRenderer.class.getName());
+            throw new RuntimeException("You must set the property messageProvider of class:" + StandardOutMessageRender.class.getName());
         }
         System.out.println(messageProvider.getMessage("Pro Spring"));
     }

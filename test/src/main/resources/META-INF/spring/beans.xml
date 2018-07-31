@@ -7,6 +7,6 @@
 
     <bean id="provider" class="com.laibao.prospring5.provider.impl.HelloWorldMessageProvider"/>
 
-    <bean id="render" class="com.laibao.prospring5.render.impl.StandardOutMessageRenderer" p:messageProvider-ref="provider"/>
+    <bean id="render" class="com.laibao.prospring5.render.impl.StandardOutMessageRender" p:messageProvider-ref="provider"/>
 
 </beans>
