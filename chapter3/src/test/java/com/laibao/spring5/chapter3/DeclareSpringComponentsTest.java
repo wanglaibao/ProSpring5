@@ -12,20 +12,27 @@ import org.springframework.context.support.GenericXmlApplicationContext;
 public class DeclareSpringComponentsTest {
 
     @Test
-    public void testSetXXXInjection() {
+    public void testSetInjectionWithXmlConfig() {
         GenericXmlApplicationContext applicationContext = new GenericXmlApplicationContext();
         applicationContext.load(new String[]{"classpath:META-INF/spring/app-context-config.xml","classpath:META-INF/spring/xml-beanfactory-config.xml"});
         applicationContext.refresh();
-
         MessageRender messageRender = applicationContext.getBean("render", MessageRender.class);
         messageRender.render();
-
         System.out.println();
         System.out.println();
-
         MessageRender newMessageRender = applicationContext.getBean("render_new", MessageRender.class);
         newMessageRender.render();
+        applicationContext.close();
+    }
 
+
+    @Test
+    public void testSetInjectionWithAnnotations() {
+        GenericXmlApplicationContext applicationContext = new GenericXmlApplicationContext();
+        applicationContext.load(new String[]{"classpath:META-INF/spring/app-context-annotation.xml"});
+        applicationContext.refresh();
+        MessageRender messageRender = applicationContext.getBean("render", MessageRender.class);
+        messageRender.render();
         applicationContext.close();
     }
 }

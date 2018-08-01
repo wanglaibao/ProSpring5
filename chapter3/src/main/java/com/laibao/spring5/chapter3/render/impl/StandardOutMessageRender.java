@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
+
 /**
  * @author laibao wang
  * @date 2018-07-31
@@ -26,7 +28,8 @@ public class StandardOutMessageRender implements MessageRender {
     }
 
     @Override
-    @Autowired
+    //@Autowire
+    @Resource(name = "provider")
     public void setMessageProvider(MessageProvider messageProvider) {
         this.messageProvider = messageProvider;
     }
