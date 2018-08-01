@@ -19,5 +19,6 @@ public class HelloWorldSpringAnnotatedTest {
         applicationContext.refresh();
         MessageRender messageRender = applicationContext.getBean("render", MessageRender.class);
         messageRender.render();
+        applicationContext.close();
     }
 }
