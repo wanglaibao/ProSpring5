@@ -14,6 +14,7 @@ public class HelloWorldSpringAnnotatedTest {
 
     @Test
     public void testHelloWorldSpringAnnotated() {
+        System.out.println("begin to test ");
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext();
         applicationContext.register(HelloWorldConfiguration.class);
         applicationContext.refresh();
