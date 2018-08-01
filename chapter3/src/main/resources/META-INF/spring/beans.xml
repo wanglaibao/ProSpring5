@@ -8,4 +8,8 @@
     <bean id="provider" class="com.laibao.spring5.chapter3.provider.impl.HelloWorldMessageProvider"/>
 
     <bean id="render" class="com.laibao.spring5.chapter3.render.impl.StandardOutMessageRender" p:messageProvider-ref="provider"/>
+
+    <bean id="renderOld" class="com.laibao.spring5.chapter3.render.impl.StandardOutMessageRender" >
+        <property name="messageProvider" ref="provider"/>
+    </bean>
 </beans>
