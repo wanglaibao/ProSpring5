@@ -24,9 +24,9 @@ public class SingerTest {
         applicationContext.load("classpath:META-INF/spring/singer.xml");
         applicationContext.refresh();
 
-        getBean("singerOne",Singer.class,applicationContext);
-        getBean("singerTwo",Singer.class,applicationContext);
-        getBean("singerThree",Singer.class,applicationContext);
+        BaseUtils.getBean("singerOne",Singer.class,applicationContext);
+        BaseUtils.getBean("singerTwo",Singer.class,applicationContext);
+        BaseUtils.getBean("singerThree",Singer.class,applicationContext);
 
         applicationContext.close();
     }
@@ -37,9 +37,9 @@ public class SingerTest {
         applicationContext.load("classpath:META-INF/spring/singer2.xml");
         applicationContext.refresh();
 
-        getBean("singerOne",Singer.class,applicationContext);
-        getBean("singerTwo",Singer.class,applicationContext);
-        getBean("singerThree",Singer.class,applicationContext);
+        BaseUtils.getBean("singerOne",Singer.class,applicationContext);
+        BaseUtils.getBean("singerTwo",Singer.class,applicationContext);
+        BaseUtils.getBean("singerThree",Singer.class,applicationContext);
 
         applicationContext.close();
     }
@@ -50,9 +50,9 @@ public class SingerTest {
         applicationContext.load("classpath:META-INF/spring/singer3.xml");
         applicationContext.refresh();
 
-        getBean("singerOne",SingerInitializingBean.class,applicationContext);
-        getBean("singerTwo",SingerInitializingBean.class,applicationContext);
-        getBean("singerThree",SingerInitializingBean.class,applicationContext);
+        BaseUtils.getBean("singerOne",SingerInitializingBean.class,applicationContext);
+        BaseUtils.getBean("singerTwo",SingerInitializingBean.class,applicationContext);
+        BaseUtils.getBean("singerThree",SingerInitializingBean.class,applicationContext);
 
         applicationContext.close();
     }
@@ -63,9 +63,9 @@ public class SingerTest {
         applicationContext.load("classpath:META-INF/spring/singer4.xml");
         applicationContext.refresh();
 
-        getBean("singerOne",SingerWithJSR250.class,applicationContext);
-        getBean("singerTwo",SingerWithJSR250.class,applicationContext);
-        getBean("singerThree",SingerWithJSR250.class,applicationContext);
+        BaseUtils.getBean("singerOne",SingerWithJSR250.class,applicationContext);
+        BaseUtils.getBean("singerTwo",SingerWithJSR250.class,applicationContext);
+        BaseUtils.getBean("singerThree",SingerWithJSR250.class,applicationContext);
 
         applicationContext.close();
     }
@@ -76,21 +76,11 @@ public class SingerTest {
         applicationContext.register(SingerConfig.class);
         applicationContext.refresh();
 
-        getBean("singerOne",Singer.class,applicationContext);
-        getBean("singerTwo",Singer.class,applicationContext);
-        getBean("singerThree",Singer.class,applicationContext);
+        BaseUtils.getBean("singerOne",Singer.class,applicationContext);
+        BaseUtils.getBean("singerTwo",Singer.class,applicationContext);
+        BaseUtils.getBean("singerThree",Singer.class,applicationContext);
 
         applicationContext.close();
     }
 
-    private static <T> T getBean(String beanName,@Nullable Class<T> requiredType,ApplicationContext applicationContext) {
-        try {
-            T t =  applicationContext.getBean(beanName,requiredType);
-            System.out.println(t);
-            return t;
-        } catch (BeanCreationException ex) {
-            System.out.println("An error occured in bean configuration: " + ex.getMessage());
-            return null;
-        }
-    }
 }
