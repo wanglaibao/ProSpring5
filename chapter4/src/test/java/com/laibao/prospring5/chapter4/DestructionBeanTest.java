@@ -3,7 +3,10 @@ package com.laibao.prospring5.chapter4;
 import com.laibao.prospring5.chapter4.beandestruction.DestructionBean;
 import com.laibao.prospring5.chapter4.beandestruction.DestructionBeanWithInterface;
 import com.laibao.prospring5.chapter4.beandestruction.DestructionBeanWithJSR250;
+import com.laibao.prospring5.chapter4.beandestruction.DestructionConfigBean;
+import com.laibao.prospring5.chapter4.beandestruction.configuration.DestructionBeanConfig;
 import org.junit.Test;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.GenericXmlApplicationContext;
 
 /**
@@ -42,6 +45,17 @@ public class DestructionBeanTest {
         applicationContext.load("classpath:META-INF/spring/destruction2.xml");
         applicationContext.refresh();
         DestructionBeanWithJSR250 bean = applicationContext.getBean("destruction", DestructionBeanWithJSR250.class);
+        System.out.println("Calling destroy()");
+        applicationContext.close();
+        System.out.println("Called destroy()");
+    }
+
+    @Test
+    public void testDestructionBeanConfig() {
+        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext();
+        applicationContext.register(DestructionBeanConfig.class);
+        applicationContext.refresh();
+        DestructionConfigBean destructionBean = applicationContext.getBean("destructionBean", DestructionConfigBean.class);
         System.out.println("Calling destroy()");
         applicationContext.close();
         System.out.println("Called destroy()");
