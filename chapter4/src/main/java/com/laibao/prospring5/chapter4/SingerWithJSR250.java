@@ -2,12 +2,14 @@ package com.laibao.prospring5.chapter4;
 
 import org.apache.commons.lang3.StringUtils;
 
+import javax.annotation.PostConstruct;
+
 /**
  * @author laibao wang
- * @date 2018-08-01
+ * @date 2018-08-02
  * @version 1.0
  */
-public class Singer {
+public class SingerWithJSR250 {
     private static final String DEFAULT_NAME = "金戈";
 
     private String name;
@@ -22,7 +24,8 @@ public class Singer {
         this.age = age;
     }
 
-    private void init() {
+    @PostConstruct
+    private void init() throws Exception {
         System.out.println("Initializing bean");
         if (StringUtils.isBlank(name)) {
             System.out.println("Using default name");
@@ -35,7 +38,7 @@ public class Singer {
 
     @Override
     public String toString() {
-        return "Singer{" +
+        return "SingerWithJSR250{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
                 '}';

@@ -52,6 +52,19 @@ public class SingerTest {
         applicationContext.close();
     }
 
+    @Test
+    public void testSingerWithJSR250() {
+        GenericXmlApplicationContext applicationContext = new GenericXmlApplicationContext();
+        applicationContext.load("classpath:META-INF/spring/singer4.xml");
+        applicationContext.refresh();
+
+        getBean("singerOne",SingerWithJSR250.class,applicationContext);
+        getBean("singerTwo",SingerWithJSR250.class,applicationContext);
+        getBean("singerThree",SingerWithJSR250.class,applicationContext);
+
+        applicationContext.close();
+    }
+
     private static <T> T getBean(String beanName,@Nullable Class<T> requiredType,ApplicationContext applicationContext) {
         try {
             T t =  applicationContext.getBean(beanName,requiredType);
