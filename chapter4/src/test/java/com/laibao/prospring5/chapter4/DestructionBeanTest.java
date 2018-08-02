@@ -2,6 +2,7 @@ package com.laibao.prospring5.chapter4;
 
 import com.laibao.prospring5.chapter4.beandestruction.DestructionBean;
 import com.laibao.prospring5.chapter4.beandestruction.DestructionBeanWithInterface;
+import com.laibao.prospring5.chapter4.beandestruction.DestructionBeanWithJSR250;
 import org.junit.Test;
 import org.springframework.context.support.GenericXmlApplicationContext;
 
@@ -30,6 +31,17 @@ public class DestructionBeanTest {
         applicationContext.load("classpath:META-INF/spring/destruction1.xml");
         applicationContext.refresh();
         DestructionBeanWithInterface bean = applicationContext.getBean("destruction", DestructionBeanWithInterface.class);
+        System.out.println("Calling destroy()");
+        applicationContext.close();
+        System.out.println("Called destroy()");
+    }
+
+    @Test
+    public void testDestructionBeanWithJSR250(){
+        GenericXmlApplicationContext applicationContext = new GenericXmlApplicationContext();
+        applicationContext.load("classpath:META-INF/spring/destruction2.xml");
+        applicationContext.refresh();
+        DestructionBeanWithJSR250 bean = applicationContext.getBean("destruction", DestructionBeanWithJSR250.class);
         System.out.println("Calling destroy()");
         applicationContext.close();
         System.out.println("Called destroy()");

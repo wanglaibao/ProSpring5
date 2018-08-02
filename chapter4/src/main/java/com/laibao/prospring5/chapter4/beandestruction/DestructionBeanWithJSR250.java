@@ -1,7 +1,7 @@
 package com.laibao.prospring5.chapter4.beandestruction;
 
-import org.springframework.beans.factory.InitializingBean;
-
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import java.io.File;
 
 /**
@@ -9,7 +9,7 @@ import java.io.File;
  * @date 2018-08-02
  * @version 1.0
  */
-public class DestructionBean implements InitializingBean{
+public class DestructionBeanWithJSR250 {
     private File file;
     private String filePath;
 
@@ -17,8 +17,8 @@ public class DestructionBean implements InitializingBean{
         this.filePath = filePath;
     }
 
-    @Override
-    public void afterPropertiesSet() throws Exception {
+    @PostConstruct
+    private void init() throws Exception{
         System.out.println("Initializing Bean");
         if (filePath == null) {
             throw new IllegalArgumentException("You must specify the filePath property of" + DestructionBean.class);
@@ -28,6 +28,7 @@ public class DestructionBean implements InitializingBean{
         System.out.println("File exists: " + file.exists());
     }
 
+    @PreDestroy
     private void destroy() {
         System.out.println("Destroying Bean");
         if(!file.delete()) {
@@ -35,4 +36,6 @@ public class DestructionBean implements InitializingBean{
         }
         System.out.println("File exists: " + file.exists());
     }
+
+
 }
