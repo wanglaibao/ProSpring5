@@ -1,8 +1,10 @@
 package com.laibao.prospring5.chapter4;
 
+import com.laibao.prospring5.chapter4.configuration.SingerConfig;
 import org.junit.Test;
 import org.springframework.beans.factory.BeanCreationException;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.GenericXmlApplicationContext;
 import org.springframework.lang.Nullable;
 
@@ -61,6 +63,19 @@ public class SingerTest {
         getBean("singerOne",SingerWithJSR250.class,applicationContext);
         getBean("singerTwo",SingerWithJSR250.class,applicationContext);
         getBean("singerThree",SingerWithJSR250.class,applicationContext);
+
+        applicationContext.close();
+    }
+
+    @Test
+    public void testSingerWithConfiguration() {
+        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext();
+        applicationContext.register(SingerConfig.class);
+        applicationContext.refresh();
+
+        getBean("singerOne",Singer.class,applicationContext);
+        getBean("singerTwo",Singer.class,applicationContext);
+        getBean("singerThree",Singer.class,applicationContext);
 
         applicationContext.close();
     }
