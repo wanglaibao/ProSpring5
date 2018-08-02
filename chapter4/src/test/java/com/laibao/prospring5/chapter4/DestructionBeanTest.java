@@ -1,6 +1,7 @@
 package com.laibao.prospring5.chapter4;
 
 import com.laibao.prospring5.chapter4.beandestruction.DestructionBean;
+import com.laibao.prospring5.chapter4.beandestruction.DestructionBeanWithInterface;
 import org.junit.Test;
 import org.springframework.context.support.GenericXmlApplicationContext;
 
@@ -12,7 +13,7 @@ import org.springframework.context.support.GenericXmlApplicationContext;
 public class DestructionBeanTest {
 
     @Test
-    public void testDestructiveBean(){
+    public void testDestructionBean(){
         GenericXmlApplicationContext applicationContext = new GenericXmlApplicationContext();
         applicationContext.load("classpath:META-INF/spring/destruction.xml");
         applicationContext.refresh();
@@ -20,7 +21,17 @@ public class DestructionBeanTest {
         DestructionBean bean = applicationContext.getBean("destruction",DestructionBean.class);
         System.out.println("Calling destroy()");
         applicationContext.destroy();
-        //applicationContext.close();
+        System.out.println("Called destroy()");
+    }
+
+    @Test
+    public void testDestructionBeanWithInterface(){
+        GenericXmlApplicationContext applicationContext = new GenericXmlApplicationContext();
+        applicationContext.load("classpath:META-INF/spring/destruction1.xml");
+        applicationContext.refresh();
+        DestructionBeanWithInterface bean = applicationContext.getBean("destruction", DestructionBeanWithInterface.class);
+        System.out.println("Calling destroy()");
+        applicationContext.close();
         System.out.println("Called destroy()");
     }
 }
