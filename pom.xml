@@ -295,11 +295,11 @@
             <version>${motan.version}</version>
         </dependency>
 
-        <dependency>
-            <groupId>com.weibo</groupId>
-            <artifactId>motan-extension</artifactId>
-            <version>${motan.version}</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>com.weibo</groupId>-->
+            <!--<artifactId>motan-extension</artifactId>-->
+            <!--<version>${motan.version}</version>-->
+        <!--</dependency>-->
 
 
         <dependency>
