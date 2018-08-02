@@ -6,13 +6,13 @@
                             http://www.springframework.org/schema/beans/spring-beans.xsd"
         default-lazy-init="true">
 
-    <bean id="singerOne" class="com.laibao.prospring5.chapter4.Singer"
+    <bean id="singerOne" class="com.laibao.prospring5.chapter4.beancreation.Singer"
           init-method="init" p:name="金大侠" p:age="39"/>
 
-    <bean id="singerTwo" class="com.laibao.prospring5.chapter4.Singer"
+    <bean id="singerTwo" class="com.laibao.prospring5.chapter4.beancreation.Singer"
           init-method="init" p:age="72"/>
 
-    <bean id="singerThree" class="com.laibao.prospring5.chapter4.Singer"
+    <bean id="singerThree" class="com.laibao.prospring5.chapter4.beancreation.Singer"
           init-method="init" p:name="大坏蛋"/>
 
 

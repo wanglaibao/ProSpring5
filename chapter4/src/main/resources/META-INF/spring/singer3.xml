@@ -6,10 +6,10 @@
                             http://www.springframework.org/schema/beans/spring-beans.xsd"
         default-lazy-init="true">
 
-    <bean id="singerOne" class="com.laibao.prospring5.chapter4.SingerInitializingBean" p:name="金大侠" p:age="39"/>
+    <bean id="singerOne" class="com.laibao.prospring5.chapter4.beancreation.SingerInitializingBean" p:name="金大侠" p:age="39"/>
 
-    <bean id="singerTwo" class="com.laibao.prospring5.chapter4.SingerInitializingBean" p:age="72"/>
+    <bean id="singerTwo" class="com.laibao.prospring5.chapter4.beancreation.SingerInitializingBean" p:age="72"/>
 
-    <bean id="singerThree" class="com.laibao.prospring5.chapter4.SingerInitializingBean" p:name="大坏蛋"/>
+    <bean id="singerThree" class="com.laibao.prospring5.chapter4.beancreation.SingerInitializingBean" p:name="大坏蛋"/>
 
 </beans>

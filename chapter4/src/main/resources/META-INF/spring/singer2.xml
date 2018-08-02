@@ -7,11 +7,11 @@
        default-lazy-init="true"
        default-init-method="init">
 
-    <bean id="singerOne" class="com.laibao.prospring5.chapter4.Singer" p:name="金大侠" p:age="39"/>
+    <bean id="singerOne" class="com.laibao.prospring5.chapter4.beancreation.Singer" p:name="金大侠" p:age="39"/>
 
-    <bean id="singerTwo" class="com.laibao.prospring5.chapter4.Singer" p:age="72"/>
+    <bean id="singerTwo" class="com.laibao.prospring5.chapter4.beancreation.Singer" p:age="72"/>
 
-    <bean id="singerThree" class="com.laibao.prospring5.chapter4.Singer" p:name="大坏蛋"/>
+    <bean id="singerThree" class="com.laibao.prospring5.chapter4.beancreation.Singer" p:name="大坏蛋"/>
 
 
 

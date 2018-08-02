@@ -1,5 +1,6 @@
-package com.laibao.prospring5.chapter4;
+package com.laibao.prospring5.chapter4.beancreation;
 
+import com.laibao.prospring5.chapter4.beancreation.Singer;
 import org.apache.commons.lang3.StringUtils;
 
 import javax.annotation.PostConstruct;

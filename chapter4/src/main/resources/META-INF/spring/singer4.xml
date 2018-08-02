@@ -11,10 +11,10 @@
 
     <context:annotation-config/>
 
-    <bean id="singerOne" class="com.laibao.prospring5.chapter4.SingerWithJSR250" p:name="金大侠" p:age="39"/>
+    <bean id="singerOne" class="com.laibao.prospring5.chapter4.beancreation.SingerWithJSR250" p:name="金大侠" p:age="39"/>
 
-    <bean id="singerTwo" class="com.laibao.prospring5.chapter4.SingerWithJSR250" p:age="72"/>
+    <bean id="singerTwo" class="com.laibao.prospring5.chapter4.beancreation.SingerWithJSR250" p:age="72"/>
 
-    <bean id="singerThree" class="com.laibao.prospring5.chapter4.SingerWithJSR250" p:name="大坏蛋"/>
+    <bean id="singerThree" class="com.laibao.prospring5.chapter4.beancreation.SingerWithJSR250" p:name="大坏蛋"/>
 
 </beans>

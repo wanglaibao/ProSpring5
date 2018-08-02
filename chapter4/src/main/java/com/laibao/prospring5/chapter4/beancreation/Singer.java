@@ -1,4 +1,4 @@
-package com.laibao.prospring5.chapter4;
+package com.laibao.prospring5.chapter4.beancreation;
 
 import org.apache.commons.lang3.StringUtils;
 

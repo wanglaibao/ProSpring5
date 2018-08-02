@@ -1,6 +1,6 @@
-package com.laibao.prospring5.chapter4.configuration;
+package com.laibao.prospring5.chapter4.beancreation.configuration;
 
-import com.laibao.prospring5.chapter4.Singer;
+import com.laibao.prospring5.chapter4.beancreation.Singer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;

@@ -1,6 +1,9 @@
 package com.laibao.prospring5.chapter4;
 
-import com.laibao.prospring5.chapter4.configuration.SingerConfig;
+import com.laibao.prospring5.chapter4.beancreation.Singer;
+import com.laibao.prospring5.chapter4.beancreation.SingerInitializingBean;
+import com.laibao.prospring5.chapter4.beancreation.SingerWithJSR250;
+import com.laibao.prospring5.chapter4.beancreation.configuration.SingerConfig;
 import org.junit.Test;
 import org.springframework.beans.factory.BeanCreationException;
 import org.springframework.context.ApplicationContext;
