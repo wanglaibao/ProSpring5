@@ -12,4 +12,6 @@
     <bean id="destruction"
           class="com.laibao.prospring5.chapter4.beandestruction.DestructionBeanWithInterface"
           p:filePath="#{systemProperties['java.io.tmpdir']}#{systemProperties['file.separator']}test.txt"/>
+
+    <bean id="shutdownHookBean" class="com.laibao.prospring5.chapter4.springaware.ShutdownHookBean"/>
 </beans>

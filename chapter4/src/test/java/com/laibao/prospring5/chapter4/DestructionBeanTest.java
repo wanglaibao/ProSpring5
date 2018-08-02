@@ -35,7 +35,8 @@ public class DestructionBeanTest {
         applicationContext.refresh();
         DestructionBeanWithInterface bean = applicationContext.getBean("destruction", DestructionBeanWithInterface.class);
         System.out.println("Calling destroy()");
-        applicationContext.close();
+        //applicationContext.close();
+        applicationContext.registerShutdownHook();
         System.out.println("Called destroy()");
     }
 
