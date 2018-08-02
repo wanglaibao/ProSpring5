@@ -26,6 +26,19 @@ public class SingerTest {
         applicationContext.close();
     }
 
+    @Test
+    public void testSingerInitializeCallback2() {
+        GenericXmlApplicationContext applicationContext = new GenericXmlApplicationContext();
+        applicationContext.load("classpath:META-INF/spring/singer2.xml");
+        applicationContext.refresh();
+
+        getBean("singerOne",Singer.class,applicationContext);
+        getBean("singerTwo",Singer.class,applicationContext);
+        getBean("singerThree",Singer.class,applicationContext);
+
+        applicationContext.close();
+    }
+
     private static <T> T getBean(String beanName,@Nullable Class<T> requiredType,ApplicationContext applicationContext) {
         try {
             T t =  applicationContext.getBean(beanName,requiredType);
