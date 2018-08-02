@@ -60,4 +60,15 @@ public class DestructionBeanTest {
         applicationContext.close();
         System.out.println("Called destroy()");
     }
+
+    @Test
+    public void testDestructionBeanWithHook() {
+        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext();
+        applicationContext.register(DestructionBeanConfig.class);
+        applicationContext.refresh();
+        DestructionConfigBean destructionBean = applicationContext.getBean("destructionBean", DestructionConfigBean.class);
+        System.out.println("Calling destroy()");
+        applicationContext.registerShutdownHook();
+        System.out.println("Called destroy()");
+    }
 }
