@@ -11,6 +11,9 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.context.support.GenericXmlApplicationContext;
 import org.springframework.lang.Nullable;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
 /**
  * @author laibao wang
  * @date 2018-08-02
@@ -71,7 +74,7 @@ public class SingerTest {
     }
 
     @Test
-    public void testSingerWithConfiguration() {
+    public void testSingerWithConfiguration() throws NoSuchAlgorithmException {
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext();
         applicationContext.register(SingerConfig.class);
         applicationContext.refresh();
@@ -79,7 +82,7 @@ public class SingerTest {
         BaseUtils.getBean("singerOne",Singer.class,applicationContext);
         BaseUtils.getBean("singerTwo",Singer.class,applicationContext);
         BaseUtils.getBean("singerThree",Singer.class,applicationContext);
-
+        MessageDigest md5 = MessageDigest.getInstance("MD5");
         applicationContext.close();
     }
 
