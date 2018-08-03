@@ -35,5 +35,15 @@ public class MessageDigestFactoryBeanTest {
         applicationContext.close();
     }
 
+    @Test
+    public void testMessageDigestFactory() {
+        GenericXmlApplicationContext applicationContext = new GenericXmlApplicationContext();
+        applicationContext.load("classpath:META-INF/spring/messagedigest.xml");
+        applicationContext.refresh();
+
+        MessageDigester digester = applicationContext.getBean("digesterByFactory", MessageDigester.class);
+        digester.digest("Hello World!");
+        applicationContext.close();
+    }
 
 }

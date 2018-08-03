@@ -12,4 +12,19 @@
     <bean id="digester" class="com.laibao.prospring5.chapter4.factorybean.MessageDigester"
           p:digesterOne-ref="shaDigest"
           p:digesterTwo-ref="defaultDigest"/>
+
+    <bean id="shaDigestFactory" class="com.laibao.prospring5.chapter4.factorybean.MessageDigestFactory"
+          p:algorithmName="SHA1"/>
+
+    <bean id="defaultDigestFactory"
+          class="com.laibao.prospring5.chapter4.factorybean.MessageDigestFactory"/>
+
+    <bean id="shaDigestByFactory" factory-bean="shaDigestFactory" factory-method="createInstance" />
+
+    <bean id="defaultDigestByFactory" factory-bean="defaultDigestFactory" factory-method="createInstance"/>
+
+    <bean id="digesterByFactory" class="com.laibao.prospring5.chapter4.factorybean.MessageDigester"
+          p:digesterOne-ref="shaDigestByFactory"
+          p:digesterTwo-ref="defaultDigestByFactory"/>
+
 </beans>
