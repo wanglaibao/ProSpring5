@@ -13,6 +13,7 @@
         <module>test</module>
         <module>chapter4</module>
         <module>dependencyinjectionpattern</module>
+        <module>dependencyinjectionxmlconfig</module>
     </modules>
     <packaging>pom</packaging>
 
