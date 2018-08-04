@@ -12,6 +12,7 @@
         <module>chapter3</module>
         <module>test</module>
         <module>chapter4</module>
+        <module>dependencyinjectionpattern</module>
     </modules>
     <packaging>pom</packaging>
 
