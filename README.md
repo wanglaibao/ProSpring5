@@ -1,5 +1,7 @@
 ## ProSpring5
 ## learn spring framework 5 version
+    the three major Spring 5.0 libraries are spring-core,spring-beans,and spring-context, 
+    because the major classes and interfaces for creating the container are found in these libraries. 
 
 #### 1. Spring Framework Documentation
 
