@@ -1,5 +1,5 @@
 ## ProSpring5
-### 0. Introduction to spring framework 5 core library
+#### 0. Introduction to spring framework 5 core library
     the three major Spring 5.0 libraries are spring-core,spring-beans,and spring-context, 
     because the major classes and interfaces for creating the container are found in these libraries. 
     1: BeanFactory
@@ -13,8 +13,15 @@
        the ApplicationContext,found in spring-context modules, is the one that provides
        an enterprise-specific container for all its applications because it encompasses a larger scope of Spring components than its BeanFactory interface.
        
+#### 1. How to Address reusability problem in your enterprise application
+    To address the reusability problem in our enterprise application, we can use
+    various design patterns, such as the Factory pattern, Abstract Factory pattern, Builder pattern,
+    Decorator pattern, and Service Locator pattern, to compose the basic building blocks into a coherent
+    whole, such as class and object instances, to promote the reusability of components. 
+    These patterns above address the common and recursive application problems.
+    Spring Framework simply implements these patterns internally, providing you with an infrastructure to use in a formalized way.
   
-#### 1. Spring Framework Documentation
+#### 2. Spring Framework Documentation
 
 * [Spring IndexPage](https://spring.io/)
 
