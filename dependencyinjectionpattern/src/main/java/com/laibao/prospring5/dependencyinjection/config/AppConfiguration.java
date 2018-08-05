@@ -1,11 +1,13 @@
 package com.laibao.prospring5.dependencyinjection.config;
 
+import com.laibao.prospring5.dependencyinjection.SimpleAopBeanPostProcessor;
 import com.laibao.prospring5.dependencyinjection.repository.AccountRepository;
 import com.laibao.prospring5.dependencyinjection.repository.TransferRepository;
 import com.laibao.prospring5.dependencyinjection.repository.impl.JdbcAccountRepositoryImpl;
 import com.laibao.prospring5.dependencyinjection.repository.impl.JdbcTransferRepositoryImpl;
 import com.laibao.prospring5.dependencyinjection.service.TransferService;
 import com.laibao.prospring5.dependencyinjection.service.impl.TransferServiceImpl;
+import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 /**
@@ -29,5 +31,11 @@ public class AppConfiguration {
     @Bean
     public TransferRepository transferRepository() {
         return new JdbcTransferRepositoryImpl();
+    }
+
+    @Bean
+    public BeanPostProcessor beanPostProcessor() {
+        BeanPostProcessor beanPostProcessor = new SimpleAopBeanPostProcessor();
+        return beanPostProcessor;
     }
 }
