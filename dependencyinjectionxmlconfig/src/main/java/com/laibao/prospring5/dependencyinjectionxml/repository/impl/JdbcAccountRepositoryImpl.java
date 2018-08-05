@@ -22,4 +22,8 @@ public class JdbcAccountRepositoryImpl implements AccountRepository {
         account.setAmount(amount);
         return account;
     }
+
+    private void populateCache(){
+        System.out.println("Called populateCache() method");
+    }
 }

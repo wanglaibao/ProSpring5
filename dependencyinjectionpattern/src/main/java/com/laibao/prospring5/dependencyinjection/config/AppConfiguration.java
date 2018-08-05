@@ -23,7 +23,7 @@ public class AppConfiguration {
         return new TransferServiceImpl(accountRepository(), transferRepository());
     }
 
-    @Bean
+    @Bean(initMethod = "populateCache")
     public AccountRepository accountRepository() {
         return new JdbcAccountRepositoryImpl();
     }
