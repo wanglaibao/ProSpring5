@@ -1,6 +1,6 @@
 package com.laibao.prospring5.dependencyinjection.config;
 
-import com.laibao.prospring5.dependencyinjection.SimpleAopBeanPostProcessor;
+import com.laibao.prospring5.dependencyinjection.postprocessor.SimpleAopBeanPostProcessor;
 import com.laibao.prospring5.dependencyinjection.repository.AccountRepository;
 import com.laibao.prospring5.dependencyinjection.repository.TransferRepository;
 import com.laibao.prospring5.dependencyinjection.repository.impl.JdbcAccountRepositoryImpl;

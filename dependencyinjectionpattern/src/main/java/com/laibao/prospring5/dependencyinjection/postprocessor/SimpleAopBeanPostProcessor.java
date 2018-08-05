@@ -1,4 +1,4 @@
-package com.laibao.prospring5.dependencyinjection;
+package com.laibao.prospring5.dependencyinjection.postprocessor;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
