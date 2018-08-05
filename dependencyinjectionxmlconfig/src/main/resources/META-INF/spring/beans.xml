@@ -19,4 +19,8 @@
 
     <bean id="transferRepository" class="com.laibao.prospring5.dependencyinjectionxml.repository.impl.JdbcTransferRepositoryImpl"/>
 
+    <bean id="helloService" class="com.laibao.prospring5.dependencyinjectionxml.service.impl.HelloServiceImpl"/>
+
+    <bean id="beanPostProcessor" class="com.laibao.prospring5.dependencyinjectionxml.postprocessor.SimpleAopBeanPostProcessor"/>
+
 </beans>

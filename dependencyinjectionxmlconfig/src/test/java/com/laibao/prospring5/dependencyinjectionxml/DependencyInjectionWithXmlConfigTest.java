@@ -31,6 +31,6 @@ public class DependencyInjectionWithXmlConfigTest {
         amount1.setBalance(5000.0);
         transferService1.transferAmount(200,201,amount2);
 
-        applicationContext.close();
+        applicationContext.registerShutdownHook();
     }
 }
