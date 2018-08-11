@@ -3,12 +3,14 @@ package com.laibao.prospring5.dependencyinjectionxml;
 import com.laibao.prospring5.dependencyinjectionxml.domain.Account;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
+
+import static java.util.stream.Collectors.joining;
+import static java.util.stream.Collectors.toCollection;
 
 /**
  * @author laibao wang
@@ -34,5 +36,27 @@ public class IterableTest {
 
         List<Account> accounts = libraryStream.collect(Collectors.toList());
 
+    }
+
+
+    @Test
+    public void testJoining() {
+        List<String> stringList = Arrays.asList("f","g","a","b","c","d","e","kkk");
+        String a = stringList.stream().collect(joining());
+        String b = stringList.stream().collect(joining("#"));
+        String c = stringList.stream().collect(joining("#","(",")"));
+        System.out.println("a : " + a);
+        System.out.println("b : " + b);
+        System.out.println("c : " + c);
+
+
+        NavigableSet<String> set = stringList.stream().collect(toCollection(TreeSet::new));
+    }
+
+    @Test
+    public void testMethodOne() {
+        IntStream.iterate(1,i -> i * 3)
+                .limit(10)
+                .forEachOrdered(System.out::println);
     }
 }
