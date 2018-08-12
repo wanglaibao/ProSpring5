@@ -18,10 +18,8 @@ public class CompressorTest {
         CompressionStrategy zipCompressionStrategy = (OutputStream outputStream) -> new ZipOutputStream(outputStream);
 
         Compressor compressor = new Compressor(GZIPOutputStream ::new);
-        //compressor.compress();
 
         Compressor zipCompressor = new Compressor(ZipOutputStream::new);
-        //zipCompressor.compress();
 
     }
 }

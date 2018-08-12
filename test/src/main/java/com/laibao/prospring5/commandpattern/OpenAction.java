@@ -1,7 +1,9 @@
 package com.laibao.prospring5.commandpattern;
 
 /**
- * Created by A on 2018/8/11.
+ * @author laibao wang
+ * @date 2018-08-12
+ * @version 1.0
  */
 public class OpenAction implements Action{
 
